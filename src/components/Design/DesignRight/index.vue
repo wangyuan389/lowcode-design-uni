@@ -3,13 +3,20 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:41:04
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-08 15:41:24
+ * @LastEditTime: 2022-10-17 10:51:13
 -->
 <template>
-  <div class="design-right"></div>
+  <div class="design-right">
+    {{curWidget}}
+  </div>
 </template>
 
 <script setup lang='ts'>
+import { reactive, toRefs, defineProps, computed } from "vue";
+import { useDesignStore } from "@/store/design.ts";
+
+const { curWidget } = toRefs(useDesignStore());
+
 </script>
 
 <style lang="scss" scoped>

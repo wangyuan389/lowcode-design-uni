@@ -1,9 +1,9 @@
 /*
- * @Description: 
+ * @Description:
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:57:45
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-14 15:15:35
+ * @LastEditTime: 2022-10-17 10:29:25
  */
 import { defineStore } from "pinia";
 import { createId, cloneDeep } from "@/hooks/baseuse.ts";
@@ -29,6 +29,10 @@ export const useDesignStore = defineStore({
         ...cloneDeep(model),
         id: createId(8),
       };
+    },
+
+    setCurWidget(target: any) {
+      this.curWidget = target;
     },
   },
 });

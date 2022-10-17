@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-09 19:04:30
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-14 17:01:15
+ * @LastEditTime: 2022-10-17 10:27:42
 -->
 <template>
   <draggable
@@ -15,9 +15,11 @@
     :class="[isChild ? '' : 'page', emptyStyle]"
   >
     <template #item="{ element }">
-      <component :is="element.component">
-        <WidgetList :widgets="element.children" :isChild="true" />
-      </component>
+      <WidgetShape :widget="element">
+        <component :is="element.component">
+          <WidgetList :widgets="element.children" :isChild="true" />
+        </component>
+      </WidgetShape>
     </template>
   </draggable>
 </template>
@@ -27,9 +29,10 @@ import { reactive, toRefs, computed, defineProps } from "vue";
 import draggable from "vuedraggable";
 import ImgWidget from "@/widgets/ImgWidget.vue";
 import WrapWidget from "@/widgets/WrapWidget.vue";
+import WidgetShape from "./WidgetShape.vue";
 
 export default {
-  components: { draggable, ImgWidget, WrapWidget },
+  components: { draggable, ImgWidget, WrapWidget, WidgetShape },
 
   props: {
     widgets: {
