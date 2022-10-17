@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:41:04
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-17 10:51:13
+ * @LastEditTime: 2022-10-17 14:21:06
 -->
 <template>
   <div class="design-right">
@@ -22,7 +22,7 @@ const { curWidget } = toRefs(useDesignStore());
 <style lang="scss" scoped>
 .design-right {
   background: #fff;
-  width: 150px;
+  width: 250px;
   height: 100%;
 }
 </style>

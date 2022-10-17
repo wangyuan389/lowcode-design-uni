@@ -1,0 +1,14 @@
+{
+  "title": "文本",
+  "componentName": "TextWidget",
+  "describe": "文本组件，可用于展示文字信息",
+  "icon": "icon-sousuo",
+  "props": [
+    {
+      "label": "文本内容",
+      "name": "value",
+      "type": "String",
+      "defaultValue": "默认文本..."
+    }
+  ]
+}

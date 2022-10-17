@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:57:45
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-17 10:29:25
+ * @LastEditTime: 2022-10-17 16:22:26
  */
 import { defineStore } from "pinia";
 import { createId, cloneDeep } from "@/hooks/baseuse.ts";
@@ -19,6 +19,8 @@ export const useDesignStore = defineStore({
       curPage: null, // 当前页面
       curWidgetList: [], // 当前物料列表
       curWidget: null, // 当前选中物料
+      widgetSchemas: [], // 所有远程物料Schema
+      widgetSchemaDefaultValues: [], //根据所有远程物料Schema,解析物料配置默认值
     };
   },
 

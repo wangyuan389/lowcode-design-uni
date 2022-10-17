@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-09 19:04:30
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-17 10:27:42
+ * @LastEditTime: 2022-10-17 15:49:17
 -->
 <template>
   <draggable
@@ -27,12 +27,13 @@
 <script>
 import { reactive, toRefs, computed, defineProps } from "vue";
 import draggable from "vuedraggable";
-import ImgWidget from "@/widgets/ImgWidget.vue";
+import ImgWidget from "@/widgets/ImgWidget/ImgWidget.vue";
 import WrapWidget from "@/widgets/WrapWidget.vue";
 import WidgetShape from "./WidgetShape.vue";
+import TextWidget from "@/widgets/TextWidget/index.vue";
 
 export default {
-  components: { draggable, ImgWidget, WrapWidget, WidgetShape },
+  components: { draggable, ImgWidget, WrapWidget, TextWidget, WidgetShape },
 
   props: {
     widgets: {

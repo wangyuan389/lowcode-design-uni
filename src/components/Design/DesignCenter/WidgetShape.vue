@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-17 10:11:41
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-17 11:51:18
+ * @LastEditTime: 2022-10-17 14:20:38
 -->
 <template>
   <div ref="shapeRef" class="shape" @click.stop="setCurWidget(props.widget)">
@@ -47,7 +47,6 @@ function getRightLocation() {
 
 <style lang="scss" scoped>
 @import "../../../style/variable";
-
 .shape {
   position: relative;
   cursor: pointer;
