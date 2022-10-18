@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-09 19:04:30
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-17 15:49:17
+ * @LastEditTime: 2022-10-18 10:29:07
 -->
 <template>
   <draggable
@@ -16,7 +16,7 @@
   >
     <template #item="{ element }">
       <WidgetShape :widget="element">
-        <component :is="element.component">
+        <component :is="element.componentName">
           <WidgetList :widgets="element.children" :isChild="true" />
         </component>
       </WidgetShape>

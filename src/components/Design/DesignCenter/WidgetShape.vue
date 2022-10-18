@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-17 10:11:41
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-17 14:20:38
+ * @LastEditTime: 2022-10-18 10:31:18
 -->
 <template>
   <div ref="shapeRef" class="shape" @click.stop="setCurWidget(props.widget)">
@@ -12,7 +12,7 @@
 
     <!-- 物料工具栏 -->
     <div class="shape-tool" :style="{ right: getRightLocation() }">
-      {{ props.widget?.name }}
+      {{ props.widget?.title }}
     </div>
 
     <slot></slot>

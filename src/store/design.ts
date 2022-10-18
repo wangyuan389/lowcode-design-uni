@@ -3,10 +3,11 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:57:45
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-17 16:22:26
+ * @LastEditTime: 2022-10-18 10:37:23
  */
 import { defineStore } from "pinia";
 import { createId, cloneDeep } from "@/hooks/baseuse.ts";
+import { initWidgetDefaulValue } from "@/hooks/widget.ts";
 
 interface DesignState {}
 
@@ -26,11 +27,8 @@ export const useDesignStore = defineStore({
 
   actions: {
     // 拖拽物料，拷贝物料模板，在面板生成物料
-    cloneWidgetModel(model: any) {
-      return {
-        ...cloneDeep(model),
-        id: createId(8),
-      };
+    cloneWidgetModel(schema: any) {
+      return initWidgetDefaulValue(schema);
     },
 
     setCurWidget(target: any) {

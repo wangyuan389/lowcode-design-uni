@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:16:23
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-14 17:01:48
+ * @LastEditTime: 2022-10-18 10:25:07
 -->
 <template>
   <div class="models">
@@ -17,7 +17,7 @@
       <template #item="{ element }">
         <div class="models-item">
           <i class="icon" :class="element.icon"></i>
-          <span>{{ element.name }}</span>
+          <span>{{ element.title }}</span>
         </div>
       </template>
     </draggable>
@@ -28,12 +28,14 @@
 import { ref } from "vue";
 import draggable from "vuedraggable";
 import { useDesignStore } from "@/store/design.ts";
+import textSchema from "@/widgets/TextWidget/schema.json";
 
 const { cloneWidgetModel } = useDesignStore();
 
 const models: any[] = ref([
-  { id: 1, name: "图片", component: "ImgWidget" },
-  { id: 2, name: "容器", component: "WrapWidget" },
+  textSchema,
+  // { id: 1, name: "图片", component: "ImgWidget" },
+  // { id: 2, name: "容器", component: "WrapWidget" },
 ]);
 </script>
 
