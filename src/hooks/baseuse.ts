@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-14 10:53:47
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-14 14:49:37
+ * @LastEditTime: 2022-10-18 14:41:14
  */
 
 /**
@@ -50,7 +50,7 @@ function cloneDeepFun (obj: any, hash = new WeakMap()) {
       }
     }
     return cloneObj
-  }
+}
 
 export {
     createId,

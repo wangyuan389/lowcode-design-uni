@@ -3,10 +3,10 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-17 15:55:29
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-18 10:40:40
+ * @LastEditTime: 2022-10-18 14:03:36
  */
 import WidgetProps from "@/types/widget.ts";
-import { createId, cloneDeep } from "@/hooks/baseuse.ts";
+import { createId, cloneDeep } from "../hooks/baseuse.ts";
 
 /**
  * 解析物料Schema，初始化对应物料默认配置值
@@ -33,4 +33,4 @@ function setWidgetDefaulValue(props: WidgetProps[], temp: any) {
   });
 }
 
-export { initWidgetDefaulValue };
+export { initWidgetDefaulValue, registeredSetters };
