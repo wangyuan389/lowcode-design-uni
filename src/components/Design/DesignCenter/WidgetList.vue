@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-09 19:04:30
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-18 10:29:07
+ * @LastEditTime: 2022-10-19 11:26:20
 -->
 <template>
   <draggable
@@ -16,16 +16,18 @@
   >
     <template #item="{ element }">
       <WidgetShape :widget="element">
-        <component :is="element.componentName">
-          <WidgetList :widgets="element.children" :isChild="true" />
+        <component :is="element.componentName" v-bind="element">
+          <Widgetwidgets :widgets="element.children" :isChild="true" />
         </component>
       </WidgetShape>
     </template>
   </draggable>
 </template>
 
+
 <script>
 import { reactive, toRefs, computed, defineProps } from "vue";
+import { useVModel } from "@vueuse/core";
 import draggable from "vuedraggable";
 import ImgWidget from "@/widgets/ImgWidget/ImgWidget.vue";
 import WrapWidget from "@/widgets/WrapWidget.vue";
@@ -37,7 +39,7 @@ export default {
 
   props: {
     widgets: {
-      type: Object,
+      type: Array,
       default: () => [],
     },
     isChild: {
@@ -62,9 +64,7 @@ export default {
     },
   },
 
-  setup(props) {
-    return {};
-  },
+  setup() {},
 };
 </script>
 

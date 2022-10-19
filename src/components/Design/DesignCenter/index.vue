@@ -3,12 +3,16 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:14:20
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-14 17:01:34
+ * @LastEditTime: 2022-10-19 11:25:55
 -->
 <template>
   <div class="design-center">
     <DesignCenterShell>
-      <WidgetList :widgets="curWidgetList" />
+      <div>
+        {{ curWidgetList }}
+      </div>
+      <div>1111111111111111111111</div>
+      <WidgetList v-model="curWidgetList" />
     </DesignCenterShell>
   </div>
 </template>
@@ -19,7 +23,7 @@ import WidgetList from "./WidgetList.vue";
 import { useDesignStore } from "@/store/design.ts";
 import DesignCenterShell from "./DesignCenterShell.vue";
 
-const { curWidgetList } = useDesignStore();
+const { curWidgetList } = toRefs(useDesignStore());
 </script>
 
 <style lang="scss" scoped>

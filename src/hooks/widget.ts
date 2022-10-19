@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-17 15:55:29
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-18 14:03:36
+ * @LastEditTime: 2022-10-19 10:18:05
  */
 import WidgetProps from "@/types/widget.ts";
 import { createId, cloneDeep } from "../hooks/baseuse.ts";
@@ -18,6 +18,7 @@ function initWidgetDefaulValue(schema: any) {
 
   setWidgetDefaulValue(props, defaultValue);
 
+  console.log('defaultValue', defaultValue);
   return defaultValue;
 }
 

@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:57:45
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-18 10:37:23
+ * @LastEditTime: 2022-10-19 10:25:31
  */
 import { defineStore } from "pinia";
 import { createId, cloneDeep } from "@/hooks/baseuse.ts";
@@ -25,14 +25,43 @@ export const useDesignStore = defineStore({
     };
   },
 
+  getters: {
+    // 定义的 getters，第一个参数就是该容器的 state
+    curWidgetSchema(state) {
+      if (state.widgetSchemas.length && state.curWidget) {
+        return state.widgetSchemas.find(
+          (schema) => schema.componentName == state.curWidget.componentName
+        );
+      }
+
+      return null;
+    },
+  },
+
   actions: {
     // 拖拽物料，拷贝物料模板，在面板生成物料
     cloneWidgetModel(schema: any) {
       return initWidgetDefaulValue(schema);
     },
 
-    setCurWidget(target: any) {
-      this.curWidget = target;
+    // 设置当前物料
+    setCurWidget(id: String) {
+      console.log("设置当前物料", id);
+      console.log('this.curWidgetList', this.curWidgetList);
+      this.curWidget = this.curWidgetList.find((widget) => widget.id == id);
+      console.log('this.curWidget', this.curWidget);
+    },
+
+    // 设置所有物料schemas
+    setWidgetSchemas(schemas: any[]) {
+      this.widgetSchemas = schemas;
+    },
+
+    // 查找对应物料schema
+    findWidgetSchemas(componentName: String) {
+      this.widgetSchemas.find(
+        (schema) => schema.componentName == componentName
+      );
     },
   },
 });

@@ -6,9 +6,10 @@
   "props": [
     {
       "label": "文本内容",
-      "name": "value",
+      "name": "text",
       "type": "String",
-      "defaultValue": "默认文本..."
+      "defaultValue": "默认文本...",
+      "setter": "TextSetter"
     }
   ]
 }

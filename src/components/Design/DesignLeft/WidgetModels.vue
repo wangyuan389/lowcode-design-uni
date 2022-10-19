@@ -3,14 +3,14 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:16:23
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-18 10:25:07
+ * @LastEditTime: 2022-10-19 10:15:43
 -->
 <template>
   <div class="models">
     <draggable
       :group="{ name: 'design', pull: 'clone' }"
       :sort="false"
-      v-model="models"
+      v-model="widgetSchemas"
       :clone="cloneWidgetModel"
       item-key="id"
     >
@@ -25,18 +25,13 @@
 </template>
 
 <script setup lang='ts'>
-import { ref } from "vue";
 import draggable from "vuedraggable";
 import { useDesignStore } from "@/store/design.ts";
 import textSchema from "@/widgets/TextWidget/schema.json";
+import { ref, reactive, toRefs, defineProps, computed } from "vue";
 
 const { cloneWidgetModel } = useDesignStore();
-
-const models: any[] = ref([
-  textSchema,
-  // { id: 1, name: "图片", component: "ImgWidget" },
-  // { id: 2, name: "容器", component: "WrapWidget" },
-]);
+const { widgetSchemas } = toRefs(useDesignStore());
 </script>
 
 <style lang="scss" scoped>

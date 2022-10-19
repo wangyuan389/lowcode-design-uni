@@ -3,13 +3,19 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:41:04
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-18 14:40:05
+ * @LastEditTime: 2022-10-19 10:19:14
 -->
 <template>
   <div class="design-right">
-    {{ curWidget }}
-    <!-- <component :is=""></component> -->
-    <TextSetter v-model="test" />
+    <template v-if="curWidgetSchema">
+      {{curWidget}}
+      <component
+        v-for="(schema, index) in curWidgetSchema.props"
+        :key="index"
+        :is="schema.setter"
+        v-model="curWidget[schema.name]"
+      ></component>
+    </template>
   </div>
 </template>
 
@@ -17,9 +23,7 @@
 import { ref, reactive, toRefs, defineProps, computed } from "vue";
 import { useDesignStore } from "@/store/design.ts";
 
-const { curWidget } = toRefs(useDesignStore());
-
-let test = ref("test");
+const { curWidget, curWidgetSchema } = toRefs(useDesignStore());
 </script>
 
 <style lang="scss" scoped>
