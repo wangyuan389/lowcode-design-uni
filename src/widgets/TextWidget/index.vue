@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-17 15:48:14
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-19 10:17:02
+ * @LastEditTime: 2022-10-19 11:46:41
 -->
 <template>
   <div class="text">{{ props.text }}</div>
@@ -20,4 +20,7 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+.text {
+  padding: 10px 0;
+}
 </style>

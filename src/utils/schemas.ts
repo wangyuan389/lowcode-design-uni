@@ -3,13 +3,15 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-19 09:36:12
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-19 09:47:39
+ * @LastEditTime: 2022-10-19 11:45:39
  */
 import textSchema from "@/widgets/TextWidget/schema.json";
+import WrapWidget from "@/widgets/WrapWidget/schema.json";
+
 import { useDesignStore } from "@/store/design.ts";
 
 function initWidgetSchemas() {
-  let schemas = [textSchema];
+  let schemas = [textSchema, WrapWidget];
   const { setWidgetSchemas } = useDesignStore();
 
   setWidgetSchemas(schemas);

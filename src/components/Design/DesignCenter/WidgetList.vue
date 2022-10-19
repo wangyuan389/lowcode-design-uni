@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-09 19:04:30
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-19 11:26:20
+ * @LastEditTime: 2022-10-19 15:29:22
 -->
 <template>
   <draggable
@@ -17,7 +17,7 @@
     <template #item="{ element }">
       <WidgetShape :widget="element">
         <component :is="element.componentName" v-bind="element">
-          <Widgetwidgets :widgets="element.children" :isChild="true" />
+          <WidgetList :widgets="element.children" :isChild="true" />
         </component>
       </WidgetShape>
     </template>
@@ -30,7 +30,7 @@ import { reactive, toRefs, computed, defineProps } from "vue";
 import { useVModel } from "@vueuse/core";
 import draggable from "vuedraggable";
 import ImgWidget from "@/widgets/ImgWidget/ImgWidget.vue";
-import WrapWidget from "@/widgets/WrapWidget.vue";
+import WrapWidget from "@/widgets/WrapWidget/WrapWidget.vue";
 import WidgetShape from "./WidgetShape.vue";
 import TextWidget from "@/widgets/TextWidget/index.vue";
 
@@ -38,13 +38,36 @@ export default {
   components: { draggable, ImgWidget, WrapWidget, TextWidget, WidgetShape },
 
   props: {
-    widgets: {
+    value: {
       type: Array,
       default: () => [],
     },
     isChild: {
       type: Boolean,
       default: false,
+    },
+  },
+
+  data() {
+    return {
+      widgets: [],
+    };
+  },
+
+  watch: {
+    value: {
+      handler(val) {
+        this.widgets = val;
+      },
+      immediate: true,
+      deep: true,
+    },
+    widgets: {
+      handler(val) {
+        this.$emit("update:value", val);
+      },
+      immediate: true,
+      deep: true,
     },
   },
 
@@ -63,8 +86,6 @@ export default {
       return "";
     },
   },
-
-  setup() {},
 };
 </script>
 

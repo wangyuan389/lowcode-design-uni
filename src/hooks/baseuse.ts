@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-14 10:53:47
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-18 14:41:14
+ * @LastEditTime: 2022-10-19 11:51:28
  */
 
 /**
@@ -52,7 +52,27 @@ function cloneDeepFun (obj: any, hash = new WeakMap()) {
     return cloneObj
 }
 
+/**
+ * 注册路径规则下所有组件
+ * @param app  vue实例
+ * @param path 规则路径
+ */
+function registeredComponents(app: any, path: String) {
+  const modules: any = import.meta.glob(`../setter/**/*.vue`);
+
+  for (const path in modules) {
+    let pathList = path.split("/");
+    let name: string = pathList.pop() as string;
+    name = name.replace(/(\.vue)/g, "");
+
+    modules[path]().then((module: any) => {
+      app.component(name, module.default);
+    });
+  }
+}
+
 export {
     createId,
-    cloneDeep
+    cloneDeep,
+    registeredComponents
 }

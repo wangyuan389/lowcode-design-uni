@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-14 15:20:26
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-14 17:01:02
+ * @LastEditTime: 2022-10-19 14:58:32
 -->
 <template>
   <div class="shell">
@@ -12,7 +12,7 @@
       <slot></slot>
     </div>
     <div class="shell-height-tag">
-      <span>iPhone 8手机高度</span>
+      <div>iPhone8首屏</div>
     </div>
   </div>
 </template>
@@ -44,17 +44,24 @@
   .shell-height-tag {
     position: absolute;
     top: 731px;
-    left: -130px;
-    width: 130px;
+    left: -115px;
+    width: 115px;
     height: 1px;
-    background: #dedede;
+    border-top: 1px dashed #bbb;
     text-align: left;
 
-    span {
+    div {
       position: absolute;
       top: -17px;
+      width: 90px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 4px;
+      background: #e3e5e9;
       font-size: 12px;
-      color: $font-color;
+      font-weight: 400;
+      color: #595961;
     }
   }
 }

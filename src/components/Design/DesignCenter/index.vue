@@ -3,15 +3,11 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:14:20
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-19 11:25:55
+ * @LastEditTime: 2022-10-19 11:35:46
 -->
 <template>
   <div class="design-center">
     <DesignCenterShell>
-      <div>
-        {{ curWidgetList }}
-      </div>
-      <div>1111111111111111111111</div>
       <WidgetList v-model="curWidgetList" />
     </DesignCenterShell>
   </div>

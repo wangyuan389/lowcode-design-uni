@@ -3,13 +3,13 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-17 10:11:41
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-19 10:24:45
+ * @LastEditTime: 2022-10-19 15:28:32
 -->
 <template>
   <div
     ref="shapeRef"
     class="shape"
-    @click.stop="setCurWidget(props?.widget?.id)"
+    @click.stop="setCurWidget(props?.widget)"
   >
     <!-- 选中物料高亮 -->
     <div :class="curWidget?.id == props.widget?.id ? 'shape-active' : ''"></div>

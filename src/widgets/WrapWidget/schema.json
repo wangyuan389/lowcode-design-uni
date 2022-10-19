@@ -1,7 +1,7 @@
 {
-  "title": "文本",
-  "componentName": "TextWidget",
-  "describe": "文本组件，可用于展示文字信息",
+  "title": "容器",
+  "componentName": "WrapWidget",
+  "describe": "容器组件，可用包含其他组件",
   "icon": "icon-sousuo",
   "props": [
     {
@@ -11,7 +11,7 @@
       "setter": {
         "setterName": "TextSetter"
       },
-      "defaultValue": "默认文本"
+      "defaultValue": "默认容器"
     }
   ]
 }

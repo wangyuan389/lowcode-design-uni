@@ -3,7 +3,7 @@
  * @Autor: WangYuan1
  * @Date: 2022-10-08 15:57:45
  * @LastEditors: WangYuan
- * @LastEditTime: 2022-10-19 10:25:31
+ * @LastEditTime: 2022-10-19 15:28:59
  */
 import { defineStore } from "pinia";
 import { createId, cloneDeep } from "@/hooks/baseuse.ts";
@@ -45,11 +45,8 @@ export const useDesignStore = defineStore({
     },
 
     // 设置当前物料
-    setCurWidget(id: String) {
-      console.log("设置当前物料", id);
-      console.log('this.curWidgetList', this.curWidgetList);
-      this.curWidget = this.curWidgetList.find((widget) => widget.id == id);
-      console.log('this.curWidget', this.curWidget);
+    setCurWidget(target: any) {
+      this.curWidget = target;
     },
 
     // 设置所有物料schemas
